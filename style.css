@@ -1,15 +1,86 @@
 
 :root {
     --my-orange: #f97316;
+    padding-bottom: 20px;
+    font-size: 1.5rem;
 }
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto";
+}
+/* outer layout start */
 .container {
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 6fr;
 }
 .sidebar {
     grid-column: 1 / 2;
+    grid-row: 1 / 50;
+}
+.right-side {
+    display: grid;
+    grid-template-rows: 20vh 80vh;
+}
+.header {
+    grid-row: 1 / 2;
+}
+.content {
+    grid-row: 2 /3;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: repeat(5, 16vh);
+}
+.content-projects {
+    grid-column: 1 / 2;
     grid-row: 1 / -1;
 }
+.content-announcements {
+    grid-column: 2 / 3;
+    grid-row: 1 / 4;
+}
+.content-trending {
+    grid-column: 2 / 3;
+    grid-row: 4 / 6;
+}
+
+/* outer layout end */
+
+/* sidebar code start*/
+
+.sidebar {
+    background-color: var(--my-orange);
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    gap: 5vh;
+}
+.sidebar > div {
+    margin-left: 1.5rem;
+}
+.sidebar-dashboard {
+    margin-top: 0.5rem ;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.sidebar-dashboard img {
+    width: 5vh;
+    height:auto;
+    aspect-ratio: 1 / 1;
+}
+.sidebar-main > div {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.sidebar-main > div > img {
+    width: 3vh;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+
+/*sidebar code end */
 img {
     width: 50px;
     height: 50px;
