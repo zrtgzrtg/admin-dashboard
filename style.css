@@ -1,14 +1,21 @@
 
 :root {
     --my-orange: #f97316;
-    padding-bottom: 20px;
     font-size: 1.5rem;
 }
-body {
+* {
+   /* overflow: hidden; 
+    hide overflow to see completed layout hopefully  
+   */
+}
+body, html {
+    padding-bottom: 20px;
     padding: 0;
     margin: 0;
+    height: 100%;
     font-family: "Roboto";
 }
+
 /* outer layout start */
 .container {
     display: grid;
@@ -16,7 +23,7 @@ body {
 }
 .sidebar {
     grid-column: 1 / 2;
-    grid-row: 1 / 50;
+    grid-row: 1 / -1;
 }
 .right-side {
     display: grid;
@@ -30,6 +37,7 @@ body {
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-template-rows: repeat(5, 16vh);
+    padding: 1rem;
 }
 .content-projects {
     grid-column: 1 / 2;
@@ -52,35 +60,195 @@ body {
     background-color: var(--my-orange);
     display: flex;
     flex-direction: column;
-    justify-content: top;
     gap: 5vh;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
 }
 .sidebar > div {
     margin-left: 1.5rem;
 }
 .sidebar-dashboard {
-    margin-top: 0.5rem ;
+    margin-top: 0 ;
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-weight: bold;
+    font-size: 150%;
 }
 .sidebar-dashboard img {
     width: 5vh;
     height:auto;
     aspect-ratio: 1 / 1;
 }
+
 .sidebar-main > div {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    font-weight: bold;
 }
 .sidebar-main > div > img {
     width: 3vh;
     height: auto;
     aspect-ratio: 1 / 1;
 }
-
+.sidebar-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+.sidebar-footer > div {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    font-weight: bold;
+}
+.sidebar-footer > div > img {
+    width: 3vh;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+.sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
 /*sidebar code end */
+
+
+/*header code start */
+
+.header {
+    display: grid;
+    grid-template-columns: 6fr 6fr;
+    align-items: stretch;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+}
+.header-searchbar {
+    display: flex;
+    gap: 0.5rem;
+}
+.header-searchbar> img {
+    width: 3vh;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin-left: 1vw;
+}
+.header-searchbar > input {
+    width: 35vw;
+    height: 3vh;
+    align-self: center;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(211, 211 , 211 , 50%);
+}
+#profile-picture-small {
+    width: 2vw;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    background-color: lightgrey;
+    border-radius: 25px;
+
+}
+.header-profile > img {
+    width: 3vh;
+    height: auto;
+    aspect-ratio: 1 / 1;
+}
+.header-profile {
+    display: flex;
+    gap: 2vw;
+    justify-content: right;
+    align-items: center;
+    margin-right: 2vw;
+    font-weight: bold;
+}
+.header-main {
+    display: grid;
+    grid-template-columns: 1fr 3fr 3fr;
+    grid-template-rows: 1fr 1fr;
+    font-weight: bold;
+    column-gap: 1vw;
+}
+.header-main > img {
+    grid-row: 1 / 3;
+    margin-left: 1vw;
+    width: 8vh;
+    height: auto;
+    aspect-ratio: 1 /1;
+    background-color: lightgrey;
+    border-radius: 55px;
+    align-self: center;
+}
+#header-hi {
+    grid-column: 2 /3;
+    grid-row: 1;
+    align-self: end;
+    font-size: 80%;
+    margin-bottom: 0.4vh;
+}
+
+.header-main > div {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: top;
+}
+.header-buttons {
+    display: flex;
+    gap: 5vw;
+    align-items: center;
+    justify-content: right;
+    margin-right: 2vw;
+}
+.header-buttons > button {
+    border-radius: 25px;
+    height: 4vh;
+    width: 6vw;
+    background-color: var(--my-orange);
+    font-size: 100%;
+    font-weight: bold;
+    border: none;
+}
+
+/*header code end */
+.right-side {
+    background-color: rgb(211, 211 , 211 , 50%);
+}
+
+/* content-projects code start */
+.content-projects-title {
+    font-weight: bold;
+    padding: 1vh;
+}
+.content-projects-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vh;
+}
+.content-projects-wrapper > div {
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    row-gap: 1vh;
+}
+.content-projects-wrapper > div {
+    border-radius: 10px;
+    background-color: white;
+    border-left: 0.5vw solid var(--my-orange);
+    padding: 1.5vh;
+    font-size: 85%;
+    color: rgb(0, 0,0, 60%);
+    max-width: 60ch;
+}
+.content-projects-subtitle {
+    align-self: end;
+    font-weight: bold;
+    font-size: 100%;
+    color: rgb(0, 0,0, 100%);
+}
+
+
+/* content-projects code end */
 img {
     width: 50px;
     height: 50px;
