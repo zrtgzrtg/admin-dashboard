@@ -38,6 +38,7 @@ body, html {
     grid-template-columns: 4fr 1fr;
     grid-template-rows: repeat(5, 16vh);
     padding: 1rem;
+    overflow: scroll;
 }
 .content-projects {
     grid-column: 1 / 2;
@@ -193,10 +194,11 @@ body, html {
     grid-column: 2;
     grid-row: 2;
     align-self: top;
+    font-size: 125%;
 }
 .header-buttons {
     display: flex;
-    gap: 5vw;
+    gap: 3vw;
     align-items: center;
     justify-content: right;
     margin-right: 2vw;
@@ -217,7 +219,7 @@ body, html {
 }
 
 /* content-projects code start */
-.content-projects-title {
+.content-title {
     font-weight: bold;
     padding: 1vh;
 }
@@ -243,12 +245,94 @@ body, html {
 .content-projects-subtitle {
     align-self: end;
     font-weight: bold;
-    font-size: 100%;
+    font-size: 125%;
     color: rgb(0, 0,0, 100%);
+}
+.content-projects-wrapper > div > div:nth-child(3n) > img {
+    width: 3vh;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    opacity: 85%;
+}
+
+.content-projects-wrapper > div > div:nth-child(3n) {
+    display: flex;
+    justify-content: right;
+    gap: 1vw;
+    margin-right: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 
 /* content-projects code end */
+
+
+/* content-announcements code start */
+.content-announcements-wrapper {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 1.5vh;
+    background-color: white;
+    border-radius: 25px;
+    padding: 3.5vh;
+    font-size: 85%;
+}
+.content-announcements-wrapper > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    border-bottom: 0.1vh solid lightgrey;
+}
+.content-announcements-wrapper > div > div:nth-child(2n) {
+    padding-bottom: 1vh;
+    font-size: 85%;
+    color: rgb(0, 0,0, 60%);
+    max-width: 25ch;
+}
+.content-announcements-subtitle {
+    font-weight: bold;
+}
+
+
+/* content-announcements code start */
+
+/* content-trending code start */
+.content-trending-wrapper {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    background-color: white;
+    border-radius: 25px;
+    padding: 1.5vh;
+    font-size: 85%;
+}
+.content-trending-wrapper > div {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(2,1fr);
+    padding: 1vh;
+    column-gap: 0.5vw;
+}
+.content-trending-wrapper > div > img {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 6vh;
+    height: auto;
+    aspect-ratio: 1/1;
+
+}
+.content-trending-wrapper > div > :nth-child(2) {
+    align-self: end;
+}
+.content-trending-wrapper > div > div:nth-child(3) {
+    grid-column: 2;
+    font-size: 85%;
+    color: rgb(0, 0,0, 60%);
+    align-self: top;
+}
+
+
+/* content-trending code end */
 img {
     width: 50px;
     height: 50px;
